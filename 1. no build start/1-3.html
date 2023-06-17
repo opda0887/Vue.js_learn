@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="opda0887 (Kiwi_Lin)" />
+    <meta name="robots" content="index, follow" />
+    <!-- Set the target and description -->
+    <base target="_self" />
+    <meta name="description" content="" />
+    <title>The test web</title>
+    <!-- from vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <nav id="container">
+      <ul>
+        <li v-for="(link, index) in links" :key="index">
+          <a :href="link.weblink" :title="`A link to ${link.name}`"
+            >{{ link.name }}</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <script>
+      const { createApp, ref } = Vue;
+      createApp({
+        setup() {
+          const links = ref([
+            { name: "Youtube", weblink: "https://www.youtube.com/" },
+            { name: "Twitch", weblink: "https://www.twitch.tv/" },
+            { name: "Bilibil", weblink: "https://www.bilibili.com/" },
+          ]);
+          return { links };
+        },
+      }).mount("nav");
+    </script>
+  </body>
+</html>

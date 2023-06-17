@@ -1,4 +1,4 @@
-<!-- contain: createApp, mount, v-for -->
+<!-- Get start, v-for generate -->
 
 <!DOCTYPE html>
 <html lang="zh-Hant">
@@ -56,8 +56,8 @@
       // navbar
       createApp({
         setup() {
-          const links = ["Home", "About", "Services", "Contact"];
-          return links;
+          const links = ref(["Home", "About", "Services", "Contact"]);
+          return { links };
         },
       }).mount("nav");
 
